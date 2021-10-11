@@ -1,37 +1,56 @@
-
 <style>
 
-    @import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
 
-    .nav {
-        position: static;
-        font-family: 'Gemunu Libre', sans-serif;
-        font-size: large;
-        top: 0px;
+    .nav
+    {
         background-color:#191D32;
-        height: 50px;  
+        position: static;
+        font-family: 'Codystar', cursive;
+        height: 3rem;  
         width: 100%;
+        top: 0px;
         margin: 0px;
+        gap: 5rem; 
         display: flex;
-        gap: 10px;     
         align-items: center;
         justify-content: center; 
+        box-sizing: border-box;
+        letter-spacing: 10px;
     }
-
-    a {
-        color: #ffead0;
+    a 
+    {
+        color: #7a7a7a;
+        font-size: 2rem;
     }
-
-    body {
-        background-color: #282F44;
+    a:hover
+    {
+        color: goldenrod
     }
+    h2:hover
+    {
+        text-shadow: 0 0 10px #fff,
+                     0 0 20px #fff,
+                     0 0 40px #fff,
+                     0 0 80px #fff,
+                     0 0 120px #fff;
+    }
+    .novo span
+    {
+        transition: 0.5s;
+    }
+    .novo:hover span:nth-child(1)
+    {
+        margin-right: 10px;
+    }
+    .novo:hover span:nth-child(1):after
+    {
+        content: " Trailer";        
+    }
+    
 </style>
 
 <nav class="nav">
-    <h2><a href="/">Início</a></h2>
-    <h2><a href="/cadastro">Cadastro</a></h2>
-    <h2><a href="/editar">Editar</a></h2>
-    <h2><a href="/deletar">Deletar</a></h2>
-    <h2><a href="/teste">Teste</a></h2>
-    <h2><a href="/cadastro">Cadastro</a></h2>
+    <h2><a href="/">Home</a></h2>
+    <h2 class="novo"><a href="/cadastro">Novo<span></span></a></h2>
 </nav>
