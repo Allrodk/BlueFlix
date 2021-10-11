@@ -33,14 +33,14 @@ app.get("/cadastro", (req, res) => {
 });
 
 app.post("/novo", (req, res) => {
-  message = "Novo filme cadastrado!";
+  message = "Novo trailler cadastrado!";
   setTimeout(() => {
     message = "";
   }, 5000);
 
   const filme = req.body;
   catalogo.push(filme);
-  res.redirect("/", { message });
+  res.redirect("/");
 });
 
 // app.get("/detalhes/:id", (req, res) => {
