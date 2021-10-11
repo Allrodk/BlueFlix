@@ -1,56 +1,68 @@
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
 
     .nav
     {
-        background-color:#191D32;
+        background-color: #191D32;
         position: static;
         font-family: 'Codystar', cursive;
-        height: 3rem;  
+        height: 3rem;
         width: 100%;
         top: 0px;
         margin: 0px;
-        gap: 5rem; 
         display: flex;
-        align-items: center;
-        justify-content: center; 
+        justify-content: center;
         box-sizing: border-box;
-        letter-spacing: 10px;
+        align-items: center;
+        gap: 50px;
     }
-    a 
+    a
     {
         color: #7a7a7a;
         font-size: 2rem;
     }
     a:hover
     {
-        color: goldenrod
+        color: goldenrod;
     }
     h2:hover
     {
+        transition: 0.4s;
         text-shadow: 0 0 10px #fff,
-                     0 0 20px #fff,
-                     0 0 40px #fff,
-                     0 0 80px #fff,
-                     0 0 120px #fff;
+            0 0 20px #fff,
+            0 0 40px #fff,
+            0 0 80px #fff,
+            0 0 120px #fff;
     }
-    .novo span
-    {
-        transition: 0.5s;
+
+    .home img {
+        width: 2rem;
+        opacity: 20%;
+        position: relative;
+        top: 3px;
     }
-    .novo:hover span:nth-child(1)
-    {
-        margin-right: 10px;
+    .home:hover img {
+        transition: 0.4s;
+        opacity: 100%;
+        shadow
     }
-    .novo:hover span:nth-child(1):after
-    {
-        content: " Trailer";        
+
+    .novo img {
+        width: 2rem;
+        opacity: 20%;
+        position: relative;
+        top: 3px;
     }
-    
+    .novo:hover img {
+        transition: 0.4s;
+        opacity: 100%;
+        shadow
+    }
+
 </style>
 
 <nav class="nav">
-    <h2><a href="/">Home</a></h2>
-    <h2 class="novo"><a href="/cadastro">Novo<span></span></a></h2>
+    <h2 class="home"><a href="/"><img src="/img/home.png" alt=""> Home</a></h2>
+
+    <h2 class="novo"><a href="/cadastro">Novo <img src="/img/mais.png" alt=""></a></h2>
 </nav>
