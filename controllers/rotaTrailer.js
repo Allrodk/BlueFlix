@@ -1,51 +1,60 @@
 const express = require("express");
 const router = express.Router();
+const Trailer = require("../models/listaTrailer");
 
-// Lista todos os produtos do DB
+const message = "";
+
+// Lista todos os itens do DB
+// router.get("/", async (req, res) => {
+//   const trailer = await Trailer.findAll();
+//   res.render("../views/index", { catalogo: trailer });
+// });
+
+// const { sequelize } = require("./models/listaTrailer");
+
 router.get("/", async (req, res) => {
+  // await sequelize.sync({force: true})
   const trailer = await Trailer.findAll();
-  res.render("../views/index", { catalogo: trailer });
+  res.render("../views/index", { catalogo: trailer, message });
 });
 
+// router.get("/criarProduto", async (req, res) => {
+//   res.render("../views/criarProduto");
+// });
 
+// router.post("/novo", async (req, res) => {
+//   const { nome, peso, valor } = req.body;
+//   await Produto.create({
+//     nome: nome,
+//     peso: peso,
+//     valor: valor,
+//   });
+//   res.redirect("/produto");
+// });
 
-router.get("/criarProduto", async (req, res) => {
-  res.render("../views/criarProduto");
-});
+// router.get("/editarProduto/:id", async (req, res) => {
+//   const produto = await Produto.findByPk(req.params.id);
+//   res.render("../views/editarProduto", { produto: produto });
+// });
 
-router.post("/novo", async (req, res) => {
-  const { nome, peso, valor } = req.body;
-  await Produto.create({
-    nome: nome,
-    peso: peso,
-    valor: valor,
-  });
-  res.redirect("/produto");
-});
+// router.post("/editarProduto/:id", async (req, res) => {
+//   const produto = await Produto.findByPk(req.params.id);
+//   const { nome, peso, valor } = req.body;
 
-router.get("/editarProduto/:id", async (req, res) => {
-  const produto = await Produto.findByPk(req.params.id);
-  res.render("../views/editarProduto", { produto: produto });
-});
+//   produto.nome = nome;
+//   produto.peso = peso;
+//   produto.valor = valor;
 
-router.post("/editarProduto/:id", async (req, res) => {
-  const produto = await Produto.findByPk(req.params.id);
-  const { nome, peso, valor } = req.body;
+//   await produto.save();
+//   res.redirect("/produto");
+// });
 
-  produto.nome = nome;
-  produto.peso = peso;
-  produto.valor = valor;
+// router.get("/deletarProduto/:id", async (req, res) => {
+//   const produto = await Produto.findByPk(req.params.id);
 
-  await produto.save();
-  res.redirect("/produto");
-});
+//   await produto.destroy();
 
-router.get("/deletarProduto/:id", async (req, res) => {
-  const produto = await Produto.findByPk(req.params.id);
-
-  await produto.destroy();
-
-  res.redirect("/produto");
-});
+//   res.redirect("/produto");
+// });
 
 module.exports = router;
