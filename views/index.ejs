@@ -27,9 +27,9 @@
         <section class="catalogo" >
             <% catalogo.forEach((elemento, indice) =>{ %>
                 <a class="filmes" href="/detalhes/<%= indice %>">               
-                    <h1><%= elemento.titulo %></h1>               
-                    <img id="imgIndex" src="<%= elemento.imagem %>" alt="">   
-                    <h1><%= elemento.elenco_principal %></h1>
+                    <h1><%= elemento.titulo %></h1>  
+                    <img id="imgIndex" src="<%= elemento.thumb %>" alt="">   
+                    <h1><%= elemento.classificacao %></h1>
                 </a>
             <% }) %>
         </section>

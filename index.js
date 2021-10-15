@@ -17,10 +17,10 @@ app.use("/", rotaTrailer);
 let message = "";
 
 const Trailer = require("./models/listaTrailer");
-const { sequelize } = require("./models/listaTrailer");
+// const { sequelize } = require("./models/listaTrailer");
 
 app.get("/", async (req, res) => {
-  await sequelize.sync({force: true})
+  // await sequelize.sync({force: true})
   const trailer = await Trailer.findAll();
   res.render("index", { catalogo: trailer, message });
 });

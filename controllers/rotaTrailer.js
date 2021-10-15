@@ -2,16 +2,18 @@ const express = require("express");
 const router = express.Router();
 
 // Lista todos os produtos do DB
-router.get("/produto", async (req, res) => {
-  const produto = await Produto.findAll();
-  res.render("../views/produto", { produto: produto });
+router.get("/", async (req, res) => {
+  const trailer = await Trailer.findAll();
+  res.render("../views/index", { catalogo: trailer });
 });
+
+
 
 router.get("/criarProduto", async (req, res) => {
   res.render("../views/criarProduto");
 });
 
-router.post("/criarProduto", async (req, res) => {
+router.post("/novo", async (req, res) => {
   const { nome, peso, valor } = req.body;
   await Produto.create({
     nome: nome,
