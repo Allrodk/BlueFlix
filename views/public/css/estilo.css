@@ -1,18 +1,19 @@
 * {
-    margin: 0px;
-    text-decoration: none;   
+  margin: 0px;
+  text-decoration: none;
 }
 
 body {
-    background-color: #282F44;
-    position: fixed;
-    top: 3rem;
+  background-color: #282f44;
+  position: fixed;
+  top: 3rem;
 }
 
 .catalogo {
-    display: flex;
+  display: flex;
 }
 
 .filmes {
-    margin-left: 10px;
+  margin-left: 10px;
 }
+

@@ -14,13 +14,17 @@
         </div>        
     </header>
     <main>
-        <% catalogo.forEach(item =>{ %>           
-            <a href="/editar/<%=item.id%>"><button>Editar</button></a>              
-        <% }) %>
+        <section>           
+            <h1><%= trailer.titulo %></h1>  
+            <img id="imgIndex" src="<%= trailer.thumb %>" alt="">   
+            <h1><%= trailer.classificacao %></h1>                    
+
+            <a href="/editar/<%=trailer.id%>"><button>Editar</button></a>  
+            <a href="/deletarTrailer/<%=trailer.id%>"><button>Excluir</button></a>                        
+        </section>
     </main>
     <footer>
-    
+        <h6>Todos os direitos reservados</h6>
     </footer>
 </body>
-
 </html>
