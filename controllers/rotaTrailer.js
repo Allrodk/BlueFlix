@@ -1,7 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const Trailer = require("../models/listaTrailer");
-
 
 // Lista todos os produtos do DB
 router.get("/produto", async (req, res) => {
