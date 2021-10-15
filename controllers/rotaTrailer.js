@@ -47,7 +47,7 @@ router.post("/novo", async (req, res) => {
     thumb: thumb,
     video: video,
   });
-  res.redirect("/index");
+  res.redirect("/");
 });
 
 router.get("/editar/:id", async (req, res) => {
