@@ -35,7 +35,7 @@ router.post("/novo", async (req, res) => {
     thumb,
     video,
   } = req.body;
-  await Produto.create({
+  await Trailer.create({
     titulo: titulo,
     sinopse: sinopse,
     ano: ano,
@@ -55,17 +55,17 @@ router.get("/editar/:id", async (req, res) => {
   res.render("../views/editar", { trailer: trailer });
 });
 
-router.post("/editarProduto/:id", async (req, res) => {
-  const produto = await Produto.findByPk(req.params.id);
-  const { nome, peso, valor } = req.body;
+// router.post("/editarProduto/:id", async (req, res) => {
+//   const produto = await Produto.findByPk(req.params.id);
+//   const { nome, peso, valor } = req.body;
 
-  produto.nome = nome;
-  produto.peso = peso;
-  produto.valor = valor;
+//   produto.nome = nome;
+//   produto.peso = peso;
+//   produto.valor = valor;
 
-  await produto.save();
-  res.redirect("/produto");
-});
+//   await produto.save();
+//   res.redirect("/produto");
+// });
 
 // router.get("/deletarProduto/:id", async (req, res) => {
 //   const produto = await Produto.findByPk(req.params.id);
