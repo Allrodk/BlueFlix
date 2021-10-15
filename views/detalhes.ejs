@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <title>Detalhes</title>
 </head>
-<header>
-    <div>
-        <%- include('nav.ejs') %>
-    </div>        
-</header>
 <body>
+    <header>
+        <div>
+            <%- include('nav.ejs') %>
+        </div>        
+    </header>
+    <main>
+        <% catalogo.forEach(item =>{ %>           
+            <a href="/editar/<%=item.id%>"><button>Editar</button></a>              
+        <% }) %>
+    </main>
+    <footer>
     
+    </footer>
 </body>
-<footer>
-    
-</footer>
+
 </html>
