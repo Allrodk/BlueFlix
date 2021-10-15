@@ -5,6 +5,9 @@
 
 body {
   background-color: #282f44;
+}
+
+main {
   position: fixed;
   top: 3rem;
 }
