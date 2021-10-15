@@ -8,3 +8,11 @@ body {
     position: fixed;
     top: 3rem;
 }
+
+.catalogo {
+    display: flex;
+}
+
+.filmes {
+    margin-left: 10px;
+}
