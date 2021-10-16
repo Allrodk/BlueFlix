@@ -5,9 +5,9 @@ const Trailer = require("../models/listaTrailer");
 const message = "";
 
 // Rota e Controller index
-const { sequelize } = require("../models/listaTrailer");
+// const { sequelize } = require("../models/listaTrailer");
 router.get("/", async (req, res) => {
-  await sequelize.sync({ force: true });
+  // await sequelize.sync({ force: true });
   const trailer = await Trailer.findAll();
   res.render("../views/index", { catalogo: trailer, message });
 });
