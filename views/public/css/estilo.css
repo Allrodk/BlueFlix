@@ -12,6 +12,11 @@ main {
   top: 3rem;
 }
 
+#imgBg {
+  max-height: 400px;
+  max-width: auto;
+}
+
 .catalogo {
   display: flex;
 }

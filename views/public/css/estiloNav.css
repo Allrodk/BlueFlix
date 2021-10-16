@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
 
 .nav
 {
     background-color: #191D32;
     position: fixed;
-    font-family: 'Codystar', cursive;
+    font-family: 'Syncopate', sans-serif;
     height: 3rem;
     width: 100%;
     top: 0px;
@@ -13,7 +13,7 @@
     justify-content: center;
     box-sizing: border-box;
     align-items: center;
-    gap: 4rem;
+    gap: 4rem
 }
 a
 {
@@ -28,10 +28,7 @@ h2:hover
 {
     transition: 0.4s;
     text-shadow: 0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 40px #fff,
-        0 0 80px #fff,
-        0 0 120px #fff;
+        0 0 20px #fff;
 }
 .home img
 {
