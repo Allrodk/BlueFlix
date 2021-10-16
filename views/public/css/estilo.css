@@ -1,6 +1,6 @@
 * {
   margin: 0px;
-  text-decoration: none;
+  text-decoration: none; 
 }
 
 body {
@@ -23,5 +23,17 @@ main {
 
 .filmes {
   margin-left: 10px;
+  color: #7a7a7a;
+  font-size: 2rem;
 }
 
+label {
+  color: #f2f2f2;
+  font-size: 1.5rem;
+}
+
+input {
+  font-size: 1.5rem;
+  background-color: #282f44;
+  color: #f1f1f1;
+}
