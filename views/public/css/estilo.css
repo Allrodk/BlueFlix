@@ -13,8 +13,10 @@ body
 }
 main
 {
-  position: fixed;
-  top: 3rem;
+  margin-top: 3.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #imgBg
 {
@@ -26,11 +28,24 @@ main
   display: flex;
   flex-wrap: wrap;
 }
-.filmes
+.linkFilmes
+{
+  color: #7a7a7a;
+  font-size: 0.8rem;
+}
+.miniatura
 {
   margin-left: 10px;
-  color: #7a7a7a;
-  font-size: 1rem;
+  margin-top: 10px;
+}
+.titulo
+{
+  display: flex;
+  gap: 5px;
+}
+.titulo img
+{
+  width: 30px;
 }
 form
 {
@@ -58,25 +73,26 @@ input
     top: 0px;
     margin: 0px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     box-sizing: border-box;
     align-items: center;
-    gap: 4rem
+    gap: 4rem;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 a
 {
     color: #7a7a7a;
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 a:hover
 {
-    color: goldenrod;
+    color: rgb(0, 0, 156);
 }
 h2:hover
 {
     transition: 0.4s;
-    text-shadow: 0 0 10px #fff,
-        0 0 20px #fff;
+    text-shadow: 0 0 10px #fff;
 }
 .home img
 {
