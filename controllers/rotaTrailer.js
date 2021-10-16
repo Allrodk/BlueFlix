@@ -18,6 +18,7 @@ router.get("/cadastro", async (req, res) => {
   res.render("../views/cadastro");
 });
 
+
 router.post("/novo", async (req, res) => {
   const {
     titulo,
