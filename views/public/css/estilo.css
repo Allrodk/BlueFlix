@@ -24,6 +24,7 @@ main
 .catalogo
 {
   display: flex;
+  flex-wrap: wrap;
 }
 .filmes
 {
