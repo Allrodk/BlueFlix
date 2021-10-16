@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
+
+.nav
+{
+    background-color: #191D32;
+    position: fixed;
+    font-family: 'Codystar', cursive;
+    height: 3rem;
+    width: 100%;
+    top: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 4rem;
+}
+a
+{
+    color: #7a7a7a;
+    font-size: 2rem;
+}
+a:hover
+{
+    color: goldenrod;
+}
+h2:hover
+{
+    transition: 0.4s;
+    text-shadow: 0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 40px #fff,
+        0 0 80px #fff,
+        0 0 120px #fff;
+}
+.home img
+{
+    width: 2rem;
+    opacity: 20%;
+    position: relative;
+    top: 3px;
+}
+.home:hover img
+{
+    transition: 1s;
+    opacity: 100%;
+}
+.novo img
+{
+    width: 2rem;
+    opacity: 20%;
+    position: relative;
+    top: 3px;
+}
+.novo:hover img {
+    transition: 1s;
+    opacity: 100%;
+}
