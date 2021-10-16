@@ -26,14 +26,19 @@
         <section class="catalogo" >
             <% catalogo.forEach((elemento) =>{ %>
                 <a class="filmes" href="/detalhes/<%= elemento.id %>">               
+                    <img src="./img/<%= elemento.classificacao %>.png"></img>   
                     <h1><%= elemento.titulo %></h1>  
-                    <img id="imgIndex" src="<%= elemento.thumb %>" alt="">   
-                    <h1><%= elemento.classificacao %></h1>
+                    <img id="imgIndex" src="<%= elemento.thumb %>" alt=""> 
                 </a>
             <% }) %>
         </section>
 
     </main>
+    <% if (message != "") {  %>
+        <section id="message">
+            <p><%= message %></p> <span id="close">&times;</span>
+        </section>
+    <% }  %>
     <footer>
         <h6>Todos os direitos reservados</h6>
     </footer>

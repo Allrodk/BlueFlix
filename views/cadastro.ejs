@@ -33,14 +33,18 @@
             </section>
             <section class="itemcadastro">
                 <label for="classificacao">Classificação: </label>
-                <input type="text" name="classificacao" id="classificacao" placeholder="Livre, 10, 12, 14, 16 ou 18 anos" required>
+                <select name="classificacao" id="classificacao">                    
+                    <option value="Livre">Livre</option>   
+                    <option value="10">10 anos</option>   
+                    <option value="12">12 anos</option>   
+                    <option value="14">14 anos</option>   
+                    <option value="16">16 anos</option>   
+                    <option value="18">18 anos</option>                    
+                </select>
             </section>
             <section class="itemcadastro">
                 <label for="categoria">Categoria: </label>
-                <select name="categoria" id="categoria">                    
-                    <option value="ficcao">Ficção</option>
-                    <option value="comedia"> Comédia</option>
-                </select>                                   
+                <input type="text" name="categoria" id="categoria" placeholder="Comédia, Ficção, Romance, ..." required>                               
             </section>
             <section class="itemcadastro">
                 <label for="atores">Atores: </label>
@@ -58,9 +62,10 @@
                 <label for="video">URL do Trailer: </label> </label>
                 <input type="text" name="video" id="video" placeholder="Digite a URL do trailer" required>
             </section>
+            <section>
                 <button type="submit">Cadastrar</button>
             </section>
-        </form>        
+        </form>       
     </main>    
     <footer>
         <h6>Todos os direitos reservados</h6>
