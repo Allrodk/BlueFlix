@@ -10,6 +10,7 @@ router.get("/", async (req, res) => {
   // await sequelize.sync({ force: true });
   const trailer = await Trailer.findAll();
   res.render("../views/index", { catalogo: trailer, message });
+  
 });
 
 // Rota e Controller Cadastro
@@ -53,10 +54,25 @@ router.get("/detalhes/:id", async (req, res) => {
 });
 
 // Rota e Controller detalhes
-router.get("categoria/:categoria", async (req, res) => {
-  const trailer = await Trailer.findByPk(req.params.categoria);
-  console.log(trailer);
-  res.render("../views/categoria", { trailer: trailer });
+router.get("/nav", async (req, res) => {
+  const trailer = await Trailer.findAll();
+
+  let categoria = [""];
+  trailer.forEach((elemento) => {
+    let chave = 0;
+    for (let i = 0; i < categoria.length; i++) {
+      if (categoria[i] == elemento.categoria) {
+        chave = 1;
+        break;
+      }
+    }
+    if (chave == 0) {
+      categoria.push(elemento.categoria);
+    }
+  });
+  categoria.splice(0, 1);
+
+  res.send({categoria: categoria}); 
 });
 
 // Rota e Controller editar
