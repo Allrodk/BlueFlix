@@ -37,7 +37,11 @@
             </section>
             <section class="itemcadastro">
                 <label for="categoria">Categoria: </label>
-                <input type="text" name="categoria" id="categoria" value="<%= trailer.categoria %>">
+                <select name="categoria" id="categoria">  
+                    <option value="<%= trailer.categoria %>"><%= trailer.categoria %></option>                  
+                    <option value="ficcao">Ficção</option>
+                    <option value="comedia">Comédia</option>
+                </select>                
             </section>
             <section class="itemcadastro">
                 <label for="atores">Atores: </label>

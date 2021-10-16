@@ -52,6 +52,13 @@ router.get("/detalhes/:id", async (req, res) => {
   res.render("../views/detalhes", { trailer: trailer });
 });
 
+// Rota e Controller detalhes
+router.get("categoria/:categoria", async (req, res) => {
+  const trailer = await Trailer.findByPk(req.params.categoria);
+  console.log(trailer);
+  res.render("../views/categoria", { trailer: trailer });
+});
+
 // Rota e Controller editar
 router.get("/editar/:id", async (req, res) => {
   const trailer = await Trailer.findByPk(req.params.id);
