@@ -33,14 +33,18 @@
             </section>
             <section class="itemcadastro">
                 <label for="classificacao">Classificação: </label>
-                <input type="text" name="classificacao" id="classificacao" value="<%= trailer.classificacao %>">
+                <select name="classificacao" id="classificacao" value="<%= trailer.classificacao %>">                    
+                    <option value="Livre">Livre</option>   
+                    <option value="10">10 anos</option>   
+                    <option value="12">12 anos</option>   
+                    <option value="14">14 anos</option>   
+                    <option value="16">16 anos</option>   
+                    <option value="18">18 anos</option>                    
+                </select>
             </section>
             <section class="itemcadastro">
                 <label for="categoria">Categoria: </label>
-                <select name="categoria" id="categoria">  
-                    <option value="<%= trailer.categoria %>"><%= trailer.categoria %></option>                  
-                    <option value="ficcao">Ficção</option>
-                    <option value="comedia">Comédia</option>
+                    <input type="text" name="categoria" id="categoria" value="<%= trailer.categoria %>">
                 </select>                
             </section>
             <section class="itemcadastro">

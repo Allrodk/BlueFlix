@@ -14,25 +14,20 @@
             <%- include('nav.ejs') %>
         </div>
     </header>
-
-    <% if(message != ""){ %>
-        <section id="message">
-            <p><%= message %></p><span id="close">&times;</span>
-        </section>
-    <% } %>
-
-    <main>     
-        
-        <section class="catalogo" >
+    <main>             
+        <section class="catalogo">
             <% catalogo.forEach((elemento) =>{ %>
-                <a class="filmes" href="/detalhes/<%= elemento.id %>">               
-                    <img src="./img/<%= elemento.classificacao %>.png"></img>   
-                    <h1><%= elemento.titulo %></h1>  
-                    <img id="imgIndex" src="<%= elemento.thumb %>" alt=""> 
-                </a>
+                <div class="miniatura">
+                    <a class="linkFilmes" href="/detalhes/<%= elemento.id %>">               
+                        <img id="imgIndex" src="<%= elemento.thumb %>" alt="">
+                        <div class="titulo">
+                            <img src="./img/<%= elemento.classificacao %>.png"> 
+                            <h1><%= elemento.titulo %></h1>      
+                        </div>                 
+                    </a>       
+                </div>         
             <% }) %>
         </section>
-
     </main>
     <% if (message != "") {  %>
         <section id="message">
