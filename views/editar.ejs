@@ -33,19 +33,8 @@
             </section>
             <section class="itemcadastro">
                 <label for="classificacao">Classificação: </label>
-                <select name="classificacao" id="classificacao"> 
-                    <% if (trailer.classificacao == "Livre"){ %>                   
-                        <option value="<%= trailer.classificacao %>"><%= trailer.classificacao %></option>
-                    <% } else { %>
-                        <option value="<%= trailer.classificacao %>"><%= trailer.classificacao %> anos</option>
-                    <% } %>
-                <select name="classificacao" id="classificacao">                    
-                    <option value="Livre">Livre</option>   
-                    <option value="10">10 anos</option>   
-                    <option value="12">12 anos</option>   
-                    <option value="14">14 anos</option>   
-                    <option value="16">16 anos</option>   
-                    <option value="18">18 anos</option>                    
+                <select name="classificacao" id="listaClassificacao">
+                    <option value="<%= trailer.classificacao %>" ></option>
                 </select>
             </section>
             <section class="itemcadastro">
@@ -72,11 +61,6 @@
             <input type="hidden" name="id" value="<%=trailer.id%>">
                 <button type="submit">Alterar</button>
             </section>
-
-            <select id="languages-select" value="80">
-                <option value="" disabled selected>Choose your language</option>
-              </select>
-
         </form>        
     </main>    
     <footer>

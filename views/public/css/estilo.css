@@ -83,37 +83,11 @@ input
 a
 {
     color: #7a7a7a;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
 }
 a:hover
 {
     color: rgb(0, 0, 156);
-}
-h2:hover
-{
     transition: 0.4s;
     text-shadow: 0 0 10px #fff;
-}
-.home img
-{
-    width: 2rem;
-    opacity: 20%;
-    position: relative;
-    top: 3px;
-}
-.home:hover img
-{
-    transition: 1s;
-    opacity: 100%;
-}
-.novo img
-{
-    width: 2rem;
-    opacity: 20%;
-    position: relative;
-    top: 3px;
-}
-.novo:hover img {
-    transition: 1s;
-    opacity: 100%;
 }
