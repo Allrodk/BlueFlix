@@ -4,12 +4,11 @@ const s = document.getElementById("classificacao");
 const options = ["Livre", "10", "12", "14", "16", "18"];
 
 options.forEach((elemento, chave) => {
-  if (elemento !== classe) {
-    s.options[s.options.length] = new Option(elemento, elemento, false, false);
+  if (elemento !== atual) {
+    lista.options[lista.options.length] = new Option(elemento, elemento, false, false);
   }
   else {
-    s.options[s.options.length] = new Option(elemento, elemento, false, true);
+    lista.options[lista.options.length] = new Option(elemento, elemento, false, true);
   }
 });
-
 

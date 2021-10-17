@@ -50,28 +50,6 @@ module.exports = {
     const trailer = await Trailer.findByPk(req.params.id);
     res.render("../views/detalhes", { trailer: trailer });
   },
-
-  nav: async (req, res) => {
-    const trailer = await Trailer.findAll();
-
-    let categoria = [""];
-    trailer.forEach((elemento) => {
-      let chave = 0;
-      for (let i = 0; i < categoria.length; i++) {
-        if (categoria[i] == elemento.categoria) {
-          chave = 1;
-          break;
-        }
-      }
-      if (chave == 0) {
-        categoria.push(elemento.categoria);
-      }
-    });
-    categoria.splice(0, 1);
-
-    res.send({ categoria: categoria });
-  },
-
   getEditar: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
     res.render("../views/editar", { trailer: trailer });
