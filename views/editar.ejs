@@ -33,10 +33,15 @@
                 <label for="duracao">Duração: </label>
                 <input type="text" name="duracao" id="duracao" value="<%= trailer.duracao %>">
             </section>
+
+            <input type="hidden" name="inputClassificacao" id="inputClassificacao" value="<%= trailer.classificacao %>">
+
             <section class="itemcadastro">
                 <label for="classificacao">Classificação: </label>
-                <select name="classificacao" id="classificacao" value="<%= trailer.classificacao %>"></select>
+                <select name="classificacao" id="classificacao">
+                </select>
             </section>
+
             <section class="itemcadastro">
                 <label for="categoria">Categoria: </label>
                 <input type="text" name="categoria" id="categoria" value="<%= trailer.categoria %>">
