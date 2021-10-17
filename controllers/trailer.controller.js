@@ -1,18 +1,24 @@
 const Trailer = require("../models/listaTrailer");
-const message = "";
-
-// const { sequelize } = require("../models/listaTrailer");
+const { sequelize } = require("../models/listaTrailer");
+let message = "";
 
 module.exports = {
   home: async (req, res) => {
-    // await sequelize.sync({ force: true });
+    await sequelize.sync();
     const trailer = await Trailer.findAll();
     res.render("../views/index", { catalogo: trailer, message });
   },
+
   cadastro: async (req, res) => {
     res.render("../views/cadastro");
   },
+
   novo: async (req, res) => {
+    message = "Filme cadastrado!";
+    setTimeout(() => {
+      message = "";
+    }, 5000);
+
     const {
       titulo,
       sinopse,
@@ -39,10 +45,12 @@ module.exports = {
     });
     res.redirect("/");
   },
+
   detalhes: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
     res.render("../views/detalhes", { trailer: trailer });
   },
+
   nav: async (req, res) => {
     const trailer = await Trailer.findAll();
 
@@ -63,10 +71,12 @@ module.exports = {
 
     res.send({ categoria: categoria });
   },
+
   getEditar: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
     res.render("../views/editar", { trailer: trailer });
   },
+
   postEditar: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
     const {
@@ -96,6 +106,7 @@ module.exports = {
     await trailer.save();
     res.redirect("/");
   },
+
   deletar: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
     await trailer.destroy();

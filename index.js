@@ -9,12 +9,6 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "/views/public")));
 app.use(express.urlencoded({ extended: true }));
 
-//----------------------------------------------------------
-
-// Link com rotaTrailer
-// const rotaTrailer = require("./controllers/rotaTrailer");
-// app.use("/", rotaTrailer);
-
 const trailerRouter =  require("./routes/trailer.route");
 app.use("/", trailerRouter);
 

@@ -11,7 +11,7 @@ const Trailer = database.sequelize.define(
       primaryKey: true,
     },
     titulo: { type: Sequelize.STRING, allowNull: false },
-    sinopse: { type: Sequelize.STRING, allowNull: true },
+    sinopse: { type: Sequelize.TEXT, allowNull: true },
     ano: { type: Sequelize.INTEGER, allowNull: false },
     duracao: { type: Sequelize.INTEGER, allowNull: false },
     classificacao: { type: Sequelize.STRING, allowNull: false },

@@ -13,7 +13,8 @@
         <div>
             <%- include('nav.ejs') %>            
         </div>
-    </header>
+    </header>   
+
     <main>             
         <section class="catalogo">
             <% catalogo.forEach((elemento) =>{ %>
@@ -29,15 +30,17 @@
             <% }) %>
         </section>
     </main>
+    
     <% if (message != "") {  %>
         <section id="message">
             <p><%= message %></p> <span id="close">&times;</span>
         </section>
     <% }  %>
+
     <footer>
         <h6>Todos os direitos reservados</h6>
     </footer>
 
-    <script src="/js/script.js"></script>
+    <script src="/js/scriptMessage.js"></script>
 </body>
 </html>
