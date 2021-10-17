@@ -13,6 +13,7 @@ languagesList.forEach((language) => {
 
 
 
+
 closeMessage.addEventListener("click", function () {
   message.style.display = "none";
 });
