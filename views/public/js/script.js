@@ -23,13 +23,28 @@ options.forEach((elemento, chave) => {
   }
 });
 
-closeMessage.addEventListener("click", function () {
-  message.style.display = "none";
-});
+/* <select name="classificacao" id="classificacao">                    
+<option value="Livre">Livre</option>   
+<option value="10">10 anos</option>   
+<option value="12">12 anos</option>   
+<option value="14">14 anos</option>   
+<option value="16">16 anos</option>   
+<option value="18">18 anos</option>                    
+</select> */
 
-setTimeout(() => {
-  message.style.display = "none";
-}, 5000);
 
 
 
+// closeMessage.addEventListener("click", function () {
+//   message.style.display = "none";
+// });
+
+// setTimeout(() => {
+//   message.style.display = "none";
+// }, 5000);
+
+
+
+// setTimeout(() => {
+//   message.style.display = "none";
+// }, 5000);
