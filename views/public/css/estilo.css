@@ -18,50 +18,51 @@ main
   align-items: center;
   justify-content: center;
 }
-#imgBg
-{
-  max-height: 400px;
-  max-width: auto;
-}
 .catalogo
 {
   display: flex;
   flex-wrap: wrap;
-}
-.linkFilmes
-{
-  color: #7a7a7a;
-  font-size: 0.8rem;
 }
 .miniatura
 {
   margin-left: 10px;
   margin-top: 10px;
 }
-.titulo
+.miniatura a
+{
+  color: #7a7a7a;
+  font-size: 0.8rem;
+}
+.miniatura .titulo
 {
   display: flex;
   gap: 5px;
+  align-items: center;
 }
-.titulo img
+.miniatura .titulo img
 {
-  width: 30px;
+  width: 35px;
 }
 form
 {
   display: flex;
   flex-direction: column;
 }
-label
+form label
 {
   color: #f2f2f2;
   font-size: 1.5rem;
 }
-input
+form input
 {
   font-size: 1rem;
   background-color: #282f44;
   color: #f1f1f1;
+}
+#imgBg
+{
+  max-height: 400px;
+  max-width: auto;
 }
 .nav
 {
@@ -80,12 +81,12 @@ input
     padding-left: 20px;
     padding-right: 20px;
 }
-a
+.nav a
 {
     color: #7a7a7a;
     font-size: 1.7rem;
 }
-a:hover
+.nav a:hover
 {
     color: rgb(0, 0, 156);
     transition: 0.4s;

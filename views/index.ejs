@@ -22,7 +22,7 @@
         <section class="catalogo">
             <% catalogo.forEach((elemento) =>{ %>
                 <div class="miniatura">
-                    <a class="linkFilmes" href="/detalhes/<%= elemento.id %>">               
+                    <a href="/detalhes/<%= elemento.id %>">               
                         <img id="imgIndex" src="<%= elemento.thumb %>" alt="">
                         <div class="titulo">
                             <img src="./img/<%= elemento.classificacao %>.png"> 
