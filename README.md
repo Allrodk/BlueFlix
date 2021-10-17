@@ -5,3 +5,5 @@ Aplicação Web de catálogo de Trailers desenvolvida a partir do conceito MVC c
 Model: Postgre e Sequelize
 View: HTML, CSS e javascript
 Controller: Javascript
+
+Desenvolvedores: Bruno Sallum e Adriano Lamas
