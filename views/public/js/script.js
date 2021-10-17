@@ -3,12 +3,36 @@ const message = document.querySelector("#message");
 
 
 // Select via DOM
-const languagesSelect = document.getElementById("listaClassificacao");
-const languagesList = ["Livre", "10", "12", "14", "16", "18"];
+// const languagesSelect = document.getElementById("listaClassificacao");
+// const languagesList = ["Livre", "10", "12", "14", "16", "18"];
 
-languagesList.forEach((language) => {
-  option = new Option(language, language.toLowerCase());
-  languagesSelect.options[languagesSelect.options.length] = option;
+// languagesList.forEach((language) => {
+//   option = new Option(language, language.toLowerCase());
+//   languagesSelect.options[languagesSelect.options.length] = option;
+// });
+
+var s = document.getElementById('listaClassificacao');
+var options = ["Livre", "10", "12", "14", "16", "18"];
+
+options.forEach(function(elemento, chave) {
+  if (elemento == 'Livre') {
+    s.options[s.options.length] = new Option(elemento, elemento, false, true);
+  }
+  else if (elemento == '10') {
+    s.options[s.options.length] = new Option(elemento, elemento, false, true);
+  }
+  else if (elemento == '12') {
+    s.options[s.options.length] = new Option(elemento, elemento, false, true);
+  }
+  else if (elemento == '14') {
+    s.options[s.options.length] = new Option(elemento, elemento, false, true);
+  }
+  else if (elemento == '16') {
+    s.options[s.options.length] = new Option(elemento, elemento, false, true);
+  }
+  else if (elemento == '18') {
+    s.options[s.options.length] = new Option(elemento, elemento, false, true);
+  }
 });
 
 {/* <select name="classificacao" id="classificacao">                    
