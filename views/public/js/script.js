@@ -11,8 +11,11 @@ const message = document.querySelector("#message");
 //   languagesSelect.options[languagesSelect.options.length] = option;
 // });
 
-var s = document.getElementById('listaClassificacao');
-var options = ["Livre", "10", "12", "14", "16", "18"];
+const s = document.getElementById('classificacao');
+
+const options = ["Livre", "10", "12", "14", "16", "18"];
+
+alert(s.value)
 
 options.forEach((elemento, chave) => {
   if (elemento !== s.value) {
