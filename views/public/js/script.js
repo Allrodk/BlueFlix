@@ -1,6 +1,6 @@
 // Script do Select Classificação
-const classe = document.getElementById("inputClassificacao").value;
-const s = document.getElementById("classificacao");
+const atual = document.getElementById("classificacaoAtual").value;
+const lista = document.getElementById("classificacao");
 const options = ["Livre", "10", "12", "14", "16", "18"];
 
 options.forEach((elemento, chave) => {
