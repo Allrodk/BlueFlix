@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,13 @@
     <link rel="stylesheet" href="../css/estilo.css">    
     <title>Editar</title>
 </head>
+
 <body>
     <header>
         <div>
             <%- include('nav.ejs') %>
-        </div>        
-    </header>    
+        </div>
+    </header>
     <main>
         <form method="POST">
             <section class="itemcadastro">
@@ -36,13 +38,23 @@
 
             <section class="itemcadastro">
                 <label for="classificacao">Classificação: </label>
+<<<<<<< HEAD
                 <select name="classificacao" id="classificacao" >                                      
+=======
+                <select name="classificacao" id="listaClassificacao" value="<%= trailer.classificacao %>">
+                    <option></option>
+>>>>>>> a1fc5f8fd5b50ab5bf20c602b30ad0ded6bf140b
                 </select>
             </section>
 
             <section class="itemcadastro">
                 <label for="categoria">Categoria: </label>
+<<<<<<< HEAD
                 <input type="text" name="categoria" id="categoria" value="<%= trailer.categoria %>">                              
+=======
+                <input type="text" name="categoria" id="categoria" value="<%= trailer.categoria %>">
+                </select>
+>>>>>>> a1fc5f8fd5b50ab5bf20c602b30ad0ded6bf140b
             </section>
             <section class="itemcadastro">
                 <label for="atores">Atores: </label>
@@ -61,13 +73,14 @@
                 <input type="text" name="video" id="video" value="<%= trailer.video %>">
             </section>
             <input type="hidden" name="id" value="<%=trailer.id%>">
-                <button type="submit">Alterar</button>
+            <button type="submit">Alterar</button>
             </section>
-        </form>        
-    </main>    
+        </form>
+    </main>
     <footer>
         <h6>Todos os direitos reservados</h6>
     </footer>
     <script src="/js/script.js"></script>
 </body>
+
 </html>
