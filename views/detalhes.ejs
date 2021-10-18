@@ -19,18 +19,18 @@
         </div>
     </header>
     <main>
-        <section>
-            <h1>
-                <%= trailer.titulo %>
-            </h1>
-            <img id="imgThumb" src="<%= trailer.thumb %>" alt="">
+        <section class="detalhes">
             <img id="imgBg" src="<%= trailer.imagembg %>" alt="">
-            <h1>
-                <%= trailer.classificacao %>
-            </h1>
-
-            <a href="/editar/<%=trailer.id%>"><button>Editar</button></a>
-            <a href="/deletarTrailer/<%=trailer.id%>"><button>Excluir</button></a>
+            <div class="tituloDetalhes">
+                <img src="../img/<%= trailer.classificacao %>.png">
+                <h1><%= trailer.titulo %></h1>
+                <h2>(<%= trailer.ano %>)</h2>
+            </div>
+            <img id="imgThumb" src="<%= trailer.thumb %>" alt="">
+            <div class="botoesFuncoes">
+                <a href="/editar/<%=trailer.id%>"><button>Editar</button></a>
+                <a href="/deletarTrailer/<%=trailer.id%>"><button>Excluir</button></a>
+            </div>
         </section>
     </main>
     <footer>

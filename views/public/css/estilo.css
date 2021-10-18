@@ -59,10 +59,31 @@ form input
   background-color: #282f44;
   color: #f1f1f1;
 }
-#imgBg
+.detalhes
+{
+  display: flex;
+  flex-flow: column wrap;
+  height: 80%;
+  width: auto;
+}
+.detalhes .tituloDetalhes
+{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+}
+.detalhes #imgBg
 {
   max-height: 400px;
   max-width: auto;
+}
+.detalhes #imgThumb
+{
+  width: 100px;
+  height: auto;
 }
 .nav
 {
