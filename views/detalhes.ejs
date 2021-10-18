@@ -31,11 +31,22 @@
                 <a href="/editar/<%=trailer.id%>"><button>Editar</button></a>
                 <a href="/deletarTrailer/<%=trailer.id%>"><button>Excluir</button></a>
             </div>
+            <div>   
+                <h1><%= trailer.video %></h1>                    
+                <input type="hidden" id="videoAtual" value="<%= trailer.video %>">
+                <iframe id="video"  width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>                
+            </div>
+            <div>   
+                <h1>Sinopse</h1>                    
+                <p><%= trailer.sinopse %></p>
+            </div>
         </section>
     </main>
     <footer>
         <h6>Todos os direitos reservados</h6>
     </footer>
+
+    <script src="/js/scriptVideo.js"></script>
 </body>
 
 </html>
