@@ -19,23 +19,35 @@
         </div>
     </header>
     <main>
-        <section>
-            <h1>
-                <%= trailer.titulo %>
-            </h1>
-            <img id="imgThumb" src="<%= trailer.thumb %>" alt="">
-            <img id="imgBg" src="<%= trailer.imagembg %>" alt="">
-            <h1>
-                <%= trailer.classificacao %>
-            </h1>
+        <section id="detalhes">
+            <div>
+                <h1><%= trailer.titulo %></h1>
+                <img id="imgThumb" src="<%= trailer.thumb %>" alt="">
+                <img id="imgBg" src="<%= trailer.imagembg %>" alt="">
+                <h1><%= trailer.classificacao %></h1>
 
-            <a href="/editar/<%=trailer.id%>"><button>Editar</button></a>
-            <a href="/deletarTrailer/<%=trailer.id%>"><button>Excluir</button></a>
+                <a href="/editar/<%=trailer.id%>"><button>Editar</button></a>
+                <a href="/deletarTrailer/<%=trailer.id%>"><button>Excluir</button></a>
+            </div>
+            
+            <section>
+                <div>   
+                    <h1><%= trailer.video %></h1>                    
+                    <input type="hidden" id="videoAtual" value="<%= trailer.video %>">
+                    <iframe id="video"  width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>                
+                </div>
+                <div>   
+                    <h1>Sinopse</h1>                    
+                    <p><%= trailer.sinopse %></p>
+                </div>
+            </section>
         </section>
     </main>
     <footer>
         <h6>Todos os direitos reservados</h6>
     </footer>
+
+    <script src="/js/scriptVideo.js"></script>
 </body>
 
 </html>
