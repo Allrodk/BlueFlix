@@ -86,31 +86,3 @@ form input
   width: 100px;
   height: auto;
 }
-.nav
-{
-    background-color: #191D32;
-    position: fixed;
-    font-family: 'Syncopate', sans-serif;
-    height: 3rem;
-    width: 100%;
-    top: 0px;
-    margin: 0px;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    align-items: center;
-    gap: 4rem;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.nav a
-{
-    color: #7a7a7a;
-    font-size: 1.7rem;
-}
-.nav a:hover
-{
-    color: rgb(0, 0, 156);
-    transition: 0.4s;
-    text-shadow: 0 0 10px #fff;
-}
