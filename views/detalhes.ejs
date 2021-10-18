@@ -18,7 +18,8 @@
     </header>
     <main>
         <section class="detalhes">
-            <img id="imgBg" src="<%= trailer.imagembg %>" alt="">
+            <input type="hidden" id="imagemAtual" value="<%= trailer.imagembg %>">
+            <img id="imgBg" src="" alt="">
             <div class="tituloDetalhes">
                 <img src="../img/<%= trailer.classificacao %>.png">
                 <h1><%= trailer.titulo %></h1>
@@ -28,7 +29,7 @@
             <div class="botoesFuncoes">
                 <a href="/editar/<%=trailer.id%>"><button>Editar</button></a>
                 <a href="/deletarTrailer/<%=trailer.id%>"><button>Excluir</button></a>
-            </div>
+            </div>            
             <div>   
                 <h1><%= trailer.video %></h1>                    
                 <input type="hidden" id="videoAtual" value="<%= trailer.video %>">
@@ -44,6 +45,7 @@
         <h6>Todos os direitos reservados</h6>
     </footer>    
     <script src="/js/scriptVideo.js"></script>
+    <script src="/js/scriptImagem.js"></script>
 </body>
 
 </html>
