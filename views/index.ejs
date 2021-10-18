@@ -10,24 +10,22 @@
 
 <body>
     <header>        
-        <div>
-            <nav class="nav">
-                <h2 class="home"><a href="/">BLUEFLIX</a></h2>
-                <h2 class="novo"><a href="/cadastro">Novo</a></h2>
-            </nav>          
-        </div>
-    </header>   
+        <nav class="nav">
+            <h2 class="home"><a href="/">BLUEFLIX</a></h2>
+            <h2 class="novo"><a href="/cadastro">Novo</a></h2>
+        </nav>          
+    </header>
 
     <main>             
         <section class="catalogo">
             <% catalogo.forEach((elemento) =>{ %>
                 <div class="miniatura">
                     <a href="/detalhes/<%= elemento.id %>">               
-                        <img id="imgIndex" src="<%= elemento.thumb %>" alt="">
-                        <div class="titulo">
-                            <img src="./img/<%= elemento.classificacao %>.png"> 
-                            <h1><%= elemento.titulo %></h1>      
-                        </div>                 
+                    <img id="imgIndex" src="<%= elemento.thumb %>" alt="">
+                    <div class="titulo">
+                        <img src="./img/<%= elemento.classificacao %>.png"> 
+                        <h1><%= elemento.titulo %></h1>      
+                    </div>                 
                     </a>       
                 </div>         
             <% }) %>
