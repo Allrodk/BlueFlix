@@ -29,26 +29,19 @@
                     <label for="sinopse">Sinopse </label>
                     <input type="text" name="sinopse" id="sinopse" value="<%= trailer.sinopse %>">
                 </section>
-                <section class="itemcadastro">
-                    <label for="ano">Ano: </label>
-                    <input type="text" name="ano" id="ano" value="<%= trailer.ano %>">
-                </section>
-                <section class="itemcadastro">
-                    <label for="duracao">Duração: </label>
-                    <input type="text" name="duracao" id="duracao" value="<%= trailer.duracao %>">
-                </section>
-
-                <input type="hidden" name="classificacaoAtual" id="classificacaoAtual" value="<%= trailer.classificacao %>">
-
-                <section class="itemcadastro">
-                    <label for="classificacao">Classificação: </label>
-                    <select name="classificacao" id="classificacao">
-                    </select>
-                </section>
-
-                <section class="itemcadastro">
-                    <label for="categoria">Categoria: </label>
-                    <input type="text" name="categoria" id="categoria" value="<%= trailer.categoria %>">
+                <section class="anoDuracao">
+                    <section class="itemcadastro">
+                        <label for="ano">Ano: </label>
+                        <input type="text" name="ano" id="ano" value="<%= trailer.ano %>">
+                    </section>
+                    <section class="itemcadastro">
+                        <label for="duracao">Duração: </label>
+                        <input type="text" name="duracao" id="duracao" value="<%= trailer.duracao %>">
+                    </section>
+                    <section class="itemcadastro">
+                        <label for="categoria">Categoria: </label>
+                        <input type="text" name="categoria" id="categoria" value="<%= trailer.categoria %>">
+                    </section>
                 </section>
                 <section class="itemcadastro">
                     <label for="atores">Atores: </label>
@@ -65,6 +58,13 @@
                 <section class="itemcadastro">
                     <label for="video">URL do Trailer: </label> </label>
                     <input type="text" name="video" id="video" value="<%= trailer.video %>">
+                </section>
+                <input type="hidden" name="classificacaoAtual" id="classificacaoAtual" value="<%= trailer.classificacao %>">
+
+                <section class="itemcadastro">
+                    <label for="classificacao">Classificação: </label>
+                    <select name="classificacao" id="classificacao">
+                    </select>
                 </section>
                 <section>
                     <input type="hidden" name="id" value="<%=trailer.id%>">
