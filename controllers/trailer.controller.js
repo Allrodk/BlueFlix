@@ -14,12 +14,7 @@ module.exports = {
   },
 
   novo: async (req, res) => {
-    message = "Filme cadastrado!";
-    setTimeout(() => {
-      message = "";
-    }, 5000);
-
-    const {
+     const {
       titulo,
       sinopse,
       ano,
@@ -43,6 +38,10 @@ module.exports = {
       thumb: thumb,
       video: video,
     });
+    message = `✔ ${titulo} Adicionado ao Catálogo.`;
+    setTimeout(() => {
+      message = "";
+    }, 5000);
     res.redirect("/");
   },
 
@@ -82,12 +81,20 @@ module.exports = {
     trailer.video = video;
 
     await trailer.save();
+    message = `✔ ${titulo} Modificado com Sucesso.`;
+    setTimeout(() => {
+      message = "";
+    }, 5000);
     res.redirect("/");
   },
 
   deletar: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
     await trailer.destroy();
+    message = `✔ ${trailer.titulo} Deletado com Sucesso.`;
+    setTimeout(() => {
+      message = "";
+    }, 5000);
     res.redirect("/");
   },
 };
