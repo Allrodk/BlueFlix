@@ -2,19 +2,38 @@
 {
   text-align: center;
 }
+.formulario
+{
+  margin: 5px;
+  padding: 15px;
+  border: solid rgba(255, 255, 255, 0.1) 10px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
 form
 {
   display: flex;
   flex-direction: column;
+  gap: 7px;
 }
 form label
 {
   color: #f2f2f2;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  display: block;
 }
 form input
 {
   font-size: 1rem;
   background-color: #282f44;
+  border: 1px solid white;
+  border-radius: 10px;
   color: #f1f1f1;
+  width: 70%;
+  height: 2rem;
+}
+.anoDuracao
+{
+  display: flex;
+  justify-content: center;
 }
