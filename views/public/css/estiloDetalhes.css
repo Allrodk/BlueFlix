@@ -17,9 +17,8 @@
   display: flex;
   gap: 10px;
 }
-.imagembg
-{
-  background-size: cover;
+.imagembg {
+  background-size: cover;  
 }
 .detalhes #imgBg
 {

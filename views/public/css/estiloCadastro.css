@@ -40,7 +40,9 @@ form input
 {
   background-size: cover;
 }
-.anoDuracao section
-{
+.anoDuracao section {
   width: 31%;
+}
+.imagembg {
+  background-repeat: repeat;
 }
