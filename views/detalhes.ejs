@@ -16,9 +16,11 @@
             <h2 class="novo"><a href="/cadastro">Novo</a></h2>
         </nav>
     </header>
-    <main>
-        <section class="detalhes">
-            <input type="hidden" id="imagemAtual" value="<%= trailer.imagembg %>">            
+    <main>          
+        <section class="detalhes" >  
+            <div id="imagembg">
+                <input type="hidden" id="imagemAtual" value="<%= trailer.imagembg %>">                            
+            </div>
             <div class="tituloDetalhes">
                 <img src="../img/<%= trailer.classificacao %>.png">
                 <h1><%= trailer.titulo %></h1>
@@ -38,6 +40,7 @@
                 <h1>Sinopse</h1>                    
                 <p><%= trailer.sinopse %></p>
             </div>
+            
         </section>
     </main>
     <footer>
