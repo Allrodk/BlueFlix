@@ -1,0 +1,31 @@
+/* Mensagem --------------------------------------------------------------------------------- */
+section#message {
+  padding: 1rem;
+  background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+  background-color: #63b8ee;
+  border-radius: 15px;
+  color: white;
+  position: fixed;
+  top: 5rem;
+  right: 2rem;
+  z-index: 100;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+span#close {
+  font-size: 2rem;
+  cursor: pointer;
+  padding-left: 2rem;
+}
+
+span#close:hover {
+  color: red;
+  transform: scale(1.3);
+}
