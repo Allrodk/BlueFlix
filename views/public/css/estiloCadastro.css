@@ -1,24 +1,28 @@
-* {
+*
+{
   text-align: center;
 }
-.formulario {
+.formulario
+{
   margin: 5px;
   padding: 15px;
-  border: solid rgba(255, 255, 255, 0.1) 10px;
   border-radius: 50px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(25, 29, 50, 0.6);
 }
-form {
+form
+{
   display: flex;
   flex-direction: column;
   gap: 7px;
 }
-form label {
+form label
+{
   color: #f2f2f2;
   font-size: 1.2rem;
   display: block;
 }
-form input {
+form input
+{
   font-size: 1rem;
   background-color: #282f44;
   border: 1px solid white;
@@ -27,11 +31,13 @@ form input {
   width: 90%;
   height: 2rem;
 }
-.anoDuracao {
+.anoDuracao
+{
   display: flex;
   justify-content: center;
 }
-#editarImagem {
+#editarImagem
+{
   background-size: cover;
 }
 .anoDuracao section
