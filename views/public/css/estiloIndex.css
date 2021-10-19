@@ -27,3 +27,6 @@
 .miniatura .titulo img {
   width: 35px;
 }
+.imagembg {
+  background-repeat: repeat;
+}
