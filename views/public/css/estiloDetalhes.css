@@ -34,7 +34,7 @@
 }
 .detalhes .subDetalhes {
   margin: 1rem;
-  min-height: 33rem;
+  min-height: 30rem;
 }
 .detalhes #informacao {
   display: flex;
@@ -54,4 +54,3 @@
 .detalhes p {
   font-size: clamp(0.7em, 0.7em + 0.7vw, 0.7em);
 }
-
