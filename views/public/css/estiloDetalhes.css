@@ -1,23 +1,21 @@
-.detalhes
-{
+.detalhes {
+  display: flex;
+}
+.detalhes .tituloDetalhes {
   display: flex;
   flex-direction: column;
-}
-.detalhes .tituloDetalhes
-{
-  display: flex;
-  flex-direction: row;
   gap: 10px;
-  align-items: center;
   font-size: 1.5rem;
   color: white;
 }
-.detalhes #imgBg
-{
+.detalhes .tituloDetalhes2 {
+  display: flex;
+  gap: 10px;
+}
+.detalhes #imgBg {
   max-width: auto;
 }
-.detalhes #imgThumb
-{
+.detalhes #imgThumb {
   width: 100px;
   height: auto;
 }
@@ -33,4 +31,27 @@
   right: 0;
   width: 100%;
   height: 100%;
+}
+.detalhes .subDetalhes {
+  margin: 1rem;
+}
+.detalhes #informacao {
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  height: 100%;
+}
+.detalhes #sectionVideo {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  width: 100%;
+}
+.detalhes #video {
+  position: absolute;  
+  width: 100%;
+  height: 95%;
+}
+
+.detalhes p {
+  font-size: clamp(0.7em, 0.7em + 0.7vw, 0.7em);
 }
