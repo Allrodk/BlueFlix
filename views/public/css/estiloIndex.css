@@ -1,0 +1,36 @@
+.catalogo
+{
+  display: flex;
+  flex-wrap: wrap;
+}
+.miniatura
+{
+  display: grid;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.miniatura a
+{
+  color: white;
+  font-size: 0.8rem;
+}
+.miniatura:hover
+{
+  background-color: blue 0.4;
+  background-size: cover;
+}
+.miniatura img
+{
+  width: 200px;
+}
+.miniatura .titulo
+{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  width: 200px;
+}
+.miniatura .titulo img
+{
+  width: 35px;
+}

@@ -1,0 +1,23 @@
+.detalhes
+{
+  display: flex;
+  flex-direction: column;
+}
+.detalhes .tituloDetalhes
+{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+}
+.detalhes #imgBg
+{
+  max-width: auto;
+}
+.detalhes #imgThumb
+{
+  width: 100px;
+  height: auto;
+}
