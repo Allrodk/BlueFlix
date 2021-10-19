@@ -14,6 +14,11 @@
   color: white;
   font-size: 0.8rem;
 }
+.miniatura:hover
+{
+  background-color: blue 0.4;
+  background-size: cover;
+}
 .miniatura img
 {
   width: 200px;
