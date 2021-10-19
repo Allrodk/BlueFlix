@@ -1,5 +1,7 @@
 .detalhes {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .detalhes .tituloDetalhes {
   display: flex;
@@ -39,11 +41,11 @@
 .detalhes #informacao {
   display: flex;
   flex-direction: column;
-  width: 18rem;
+  width: 15rem;
 }
 .detalhes #sectionVideo {
   position: relative;
-  width: 100%;
+  width: 75%;
   min-width: 320px;
 }
 .detalhes #video {
