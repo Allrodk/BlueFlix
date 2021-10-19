@@ -17,8 +17,8 @@ const Trailer = database.sequelize.define(
     classificacao: { type: Sequelize.STRING, allowNull: false },
     categoria: { type: Sequelize.STRING, allowNull: false },
     atores: { type: Sequelize.STRING, allowNull: false },
-    imagembg: { type: Sequelize.STRING, allowNull: false },
-    thumb: { type: Sequelize.STRING, allowNull: false },
+    imagembg: { type: Sequelize.TEXT, allowNull: false },
+    thumb: { type: Sequelize.TEXT, allowNull: false },
     video: { type: Sequelize.STRING, allowNull: false },
   },
   {

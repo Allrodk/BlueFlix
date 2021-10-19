@@ -18,8 +18,11 @@
         </nav>
     </header>
 
-    <main>             
-        <section class="catalogo">
+    <main>           
+        <div class="imagembg">
+            <input type="hidden" id="imagemAtual" value="/img/BlueFlix.png">                            
+        </div>          
+        <section class="catalogo">            
             <% catalogo.forEach((elemento) =>{ %>
                 <div class="miniatura">
                     <a href="/detalhes/<%= elemento.id %>">               
@@ -43,7 +46,7 @@
     <footer>
         <h6>Todos os direitos reservados</h6>
     </footer>
-
+    <script src="/js/scriptImagem.js"></script>
     <script src="/js/scriptMessage.js"></script>
 </body>
 </html>
