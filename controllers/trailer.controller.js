@@ -17,6 +17,18 @@ async function lista(trailer) {
       listaCategoria.push(elemento.categoria);
     }
   });
+  //Ordem alfabetica
+  if (listaCategoria.length > 1) {
+    listaCategoria.forEach((el, index) => {
+      for (let i = index + 1; i < listaCategoria.length; i++) {
+        if (listaCategoria[index] > listaCategoria[i]) {
+          listaCategoria.splice(index, 0, listaCategoria[i]);
+          listaCategoria.splice(i + 1, 1);
+        }
+      }
+    });
+  }
+  //----------------
 }
 
 async function validacao(trailerNew) {
