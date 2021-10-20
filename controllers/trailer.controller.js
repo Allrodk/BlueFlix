@@ -1,12 +1,34 @@
 const Trailer = require("../models/listaTrailer");
 const { sequelize } = require("../models/listaTrailer");
 let message = "";
+let listaCategoria = [""];
+
+async function lista() {
+  await sequelize.sync();
+  const trailer = await Trailer.findAll();
+
+  trailer.forEach((elemento) => {
+    let chave = 0;
+    for (let i = 0; i < listaCategoria.length; i++) {
+      if (listaCategoria[i] == elemento.categoria) {
+        chave = 1;
+        break;
+      }
+    }
+    if (chave == 0) {
+      listaCategoria.push(elemento.categoria);
+    }
+  });
+  listaCategoria.splice(0, 1);
+  console.log(listaCategoria);
+}
+lista();
 
 module.exports = {
   home: async (req, res) => {
     await sequelize.sync();
     const trailer = await Trailer.findAll();
-    res.render("../views/index", { catalogo: trailer, message });
+    res.render("../views/index", { catalogo: trailer, message, listaCategoria });
   },
 
   cadastro: async (req, res) => {
