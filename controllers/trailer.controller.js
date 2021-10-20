@@ -32,6 +32,7 @@ async function lista(trailer) {
 }
 
 async function validacao(trailerNew) {
+  const anoAtual = new Date().getFullYear();
   const {
     titulo,
     sinopse,
@@ -56,6 +57,8 @@ async function validacao(trailerNew) {
     video == ""
   ) {
     message = "Preencha todos os campos!";
+  } else if (ano.length != 4) {
+    message = `O Ano deve conter 4 digitos e ser anterior à ${anoAtual}`;
   } else if (+ano != parseInt(ano) || +duracao != parseInt(duracao)) {
     message = "Os campos (Ano) e (Duração) devem ser preenchidos com números.";
   } else if (
@@ -64,6 +67,11 @@ async function validacao(trailerNew) {
   ) {
     message =
       "Os campos (Imagem de fundo) e (Miniatura) devem conter urls válidas.";
+  } else if (
+    (video.search("http://") == -1) & (video.search("https://") == -1) ||
+    (video.search("youtube") == -1) & (video.search("youtu.be") == -1)
+  ) {
+    message = "O campo URL do Trailer deve conter link do Youtube válido.";
   }
   return message;
 }
@@ -169,7 +177,7 @@ module.exports = {
 
   postEditar: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
-    
+
     trailerNew = req.body;
     await validacao(trailerNew);
 
@@ -184,7 +192,6 @@ module.exports = {
         listaCategoria,
       });
     } else {
-
       trailer.titulo = trailerNew.titulo;
       trailer.sinopse = trailerNew.sinopse;
       trailer.ano = trailerNew.ano;
