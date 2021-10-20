@@ -4,11 +4,8 @@ let message = "";
 let listaCategoria = [];
 
 async function lista(trailer) {
-<<<<<<< HEAD
-=======
   // await sequelize.sync();
   // const trailer = await Trailer.findAll();
->>>>>>> d1033f2ad849e28d5afc58bf4552a9903860553f
   listaCategoria = [];
   trailer.forEach((elemento) => {
     let chave = 0;
@@ -29,15 +26,11 @@ module.exports = {
     await sequelize.sync();
     const trailer = await Trailer.findAll();
     await lista(trailer);
-<<<<<<< HEAD
-    res.render("../views/index", { catalogo: trailer, message, listaCategoria });
-=======
     res.render("../views/index", {
       catalogo: trailer,
       message,
       listaCategoria,
     });
->>>>>>> d1033f2ad849e28d5afc58bf4552a9903860553f
   },
 
   cadastro: async (req, res) => {
