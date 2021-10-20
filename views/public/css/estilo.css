@@ -9,6 +9,7 @@
 body {
   font-family: sans-serif;
   background-color: #282f44;
+  margin-top: 3.3rem;
 }
 button {
   box-shadow: inset 0px 1px 0px 0px #bee2f9;
@@ -45,15 +46,24 @@ button:active {
   filter: hue-rotate(165deg) opacity(15%);
   z-index: -1;
 }
-footer {
-  position: fixed;
+.footer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
   bottom: 0px;
   width: 100%;
-  text-align: center;
+  background-color: #191d32;
+  height: 3rem;
+  margin-top: 15px;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #7a7a7a;
 }
 .nav {
   background-color: #191d32;
-  position: relative;
+  position: fixed;
   font-family: "Syncopate", sans-serif;
   height: 3rem;
   width: 100%;
