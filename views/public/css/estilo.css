@@ -10,9 +10,6 @@ body {
   font-family: sans-serif;
   background-color: #282f44;
 }
-main {
-  margin-top: 3.3rem;
-}
 button {
   box-shadow: inset 0px 1px 0px 0px #bee2f9;
   background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
@@ -44,41 +41,38 @@ button:active {
   height: 100vh;
   background-position: center center;
   background-repeat: repeat;
-  background-position: 100% 100%;  
+  background-position: 100% 100%;
   filter: hue-rotate(165deg) opacity(15%);
   z-index: -1;
 }
 footer {
-  position: fixed;  
+  position: fixed;
   bottom: 0px;
   width: 100%;
   text-align: center;
 }
-.nav
-{
-    background-color: #191D32;
-    position: fixed;
-    font-family: 'Syncopate', sans-serif;
-    height: 3rem;
-    width: 100%;
-    top: 0px;
-    margin: 0px;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    align-items: center;
-    gap: 4rem;
-    padding-left: 20px;
-    padding-right: 20px;
+.nav {
+  background-color: #191d32;
+  position: relative;
+  font-family: "Syncopate", sans-serif;
+  height: 3rem;
+  width: 100%;
+  top: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 4rem;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-.nav a
-{
-    color: #7a7a7a;
-    font-size: 1.7rem;
+.nav a {
+  color: #7a7a7a;
+  font-size: 1.7rem;
 }
-.nav a:hover
-{
-    color: rgb(217, 217, 233);
-    transition: 0.4s;
-    text-shadow: 0 0 10px rgb(133, 122, 235);
+.nav a:hover {
+  color: rgb(217, 217, 233);
+  transition: 0.4s;
+  text-shadow: 0 0 10px rgb(133, 122, 235);
 }
