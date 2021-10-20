@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="stylesheet" href="../css/estiloDetalhes.css">
     <link rel="stylesheet" href="../css/estiloNav.css">
+    <link rel="stylesheet" href="../css/estiloMensagem.css">
     <title>Detalhes</title>
 </head>
 
@@ -54,11 +55,19 @@
 
         </section>
     </main>
+
+    <% if (message != "") {  %>
+        <section id="message">
+            <p><%= message %></p> <span id="close">&times;</span>
+        </section>
+    <% }  %>
+
     <footer>
         <h6>Todos os direitos reservados</h6>
     </footer>    
     <script src="/js/scriptVideo.js"></script>
     <script src="/js/scriptImagem.js"></script>
+    <script src="/js/scriptMensagem.js"></script>
 </body>
 
 </html>

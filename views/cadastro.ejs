@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <link rel="stylesheet" href="./css/estiloCadastro.css">
     <link rel="stylesheet" href="./css/estiloNav.css">
+    <link rel="stylesheet" href="./css/estiloMensagem.css">
     <title>Cadastro</title>
 </head>
 <body>
@@ -34,11 +35,11 @@
                 <section class="anoDuracao">
                     <section class="itemcadastro">
                         <label for="ano">Ano: </label>
-                        <input type="text" name="ano" id="ano" required>
+                        <input type="number" name="ano" id="ano" required>
                     </section>
                     <section class="itemcadastro">
                         <label for="duracao">Duração: </label>
-                        <input type="text" name="duracao" id="duracao" placeholder="Em minutos" required>
+                        <input type="number" name="duracao" id="duracao" placeholder="Em minutos" required>
                     </section>
                     <section class="itemcadastro">
                         <label for="categoria">Categoria: </label>
@@ -71,11 +72,19 @@
                 </section>
             </form>
         </section>
-    </main>    
+    </main>   
+    
+    <% if (message != "") {  %>
+        <section id="message">
+            <p><%= message %></p> <span id="close">&times;</span>
+        </section>
+    <% }  %>
+
     <footer>
         <h6>Todos os direitos reservados</h6>
     </footer>
     <script src="/js/scriptCadastro.js"></script>
     <script src="/js/scriptImagem.js"></script>
+    <script src="/js/scriptMensagem.js"></script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 const Trailer = require("../models/listaTrailer");
 const { sequelize } = require("../models/listaTrailer");
-let message = "";
+vazio = ["Teste"];
+const cheio = vazio;
+console.log(cheio);
 
 module.exports = {
   home: async (req, res) => {
@@ -10,11 +12,11 @@ module.exports = {
   },
 
   cadastro: async (req, res) => {
-    res.render("../views/cadastro");
+    res.render("../views/cadastro", { message });
   },
 
   novo: async (req, res) => {
-     const {
+    const {
       titulo,
       sinopse,
       ano,
@@ -26,32 +28,72 @@ module.exports = {
       thumb,
       video,
     } = req.body;
-    await Trailer.create({
-      titulo: titulo,
-      sinopse: sinopse,
-      ano: ano,
-      duracao: duracao,
-      classificacao: classificacao,
-      categoria: categoria,
-      atores: atores,
-      imagembg: imagembg,
-      thumb: thumb,
-      video: video,
-    });
-    message = `✔ ${titulo} Adicionado ao Catálogo.`;
-    setTimeout(() => {
-      message = "";
-    }, 5000);
-    res.redirect("/");
+
+    if (
+      titulo == "" ||
+      ano == "" ||
+      duracao == "" ||
+      classificacao == "" ||
+      categoria == "" ||
+      atores == "" ||
+      imagembg == "" ||
+      thumb == "" ||
+      video == ""
+    ) {
+      message = "Preencha todos os campos!";
+      setTimeout(() => {
+        message = "";
+      }, 5000);
+      res.render("../views/cadastro", { message });
+    } else if (+ano != parseInt(ano) || +duracao != parseInt(duracao)) {
+      message =
+        "Os campos (Ano) e (Duração) devem ser preenchidos com números.";
+      setTimeout(() => {
+        message = "";
+      }, 5000);
+      res.render("../views/cadastro", { message });
+    } else if (
+      (imagembg.search("http://") == -1) &
+        (imagembg.search("https://") == -1) ||
+      (thumb.search("http://") == -1) & (thumb.search("https://") == -1)
+    ) {
+      message =
+        "Os campos (Imagem de fundo) e (Miniatura) devem conter urls válidas.";
+      setTimeout(() => {
+        message = "";
+      }, 5000);
+      res.render("../views/cadastro", { message });
+    } else {
+      message = `✔ ${titulo} adicionado ao Catálogo.`;
+      setTimeout(() => {
+        message = "";
+      }, 5000);
+
+      await Trailer.create({
+        titulo: titulo,
+        sinopse: sinopse,
+        ano: ano,
+        duracao: duracao,
+        classificacao: classificacao,
+        categoria: categoria,
+        atores: atores,
+        imagembg: imagembg,
+        thumb: thumb,
+        video: video,
+      });
+
+      res.redirect("/");
+    }
   },
 
   detalhes: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
-    res.render("../views/detalhes", { trailer: trailer });
+    res.render("../views/detalhes", { trailer: trailer, message });
   },
+
   getEditar: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
-    res.render("../views/editar", { trailer: trailer });
+    res.render("../views/editar", { trailer: trailer, message });
   },
 
   postEditar: async (req, res) => {
@@ -90,11 +132,19 @@ module.exports = {
 
   deletar: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
-    await trailer.destroy();
-    message = `✔ ${trailer.titulo} Deletado com Sucesso.`;
-    setTimeout(() => {
-      message = "";
-    }, 5000);
-    res.redirect("/");
+    if (!trailer) {
+      message = "Filme não encontrado.";
+      setTimeout(() => {
+        message = "";
+      }, 5000);
+      res.render("../views/detalhes", { message });
+    } else {
+      message = `✔ ${trailer.titulo} deletado com Sucesso.`;
+      setTimeout(() => {
+        message = "";
+      }, 5000);
+      await trailer.destroy();
+      res.redirect("/");
+    }
   },
 };

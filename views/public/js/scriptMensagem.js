@@ -1,6 +1,6 @@
 // Script da Mensagem
 const closeMessage = document.querySelector("#close");
-const message = document.querySelector("#message");
+let message = document.querySelector("#message");
 
 if (message != null) {
   closeMessage.addEventListener("click", function () {
