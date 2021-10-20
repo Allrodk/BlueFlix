@@ -1,7 +1,18 @@
 <nav class="nav">
     <h2 class="home"><a href="/">BLUEFLIX</a></h2>
-    <% for(let i=0; i < listaCategoria.length; i++) { %>
-        <a href="/<%= listaCategoria[i] %>"><h2 class="categorias"><%= listaCategoria[i] %></h2></a>
-    <% } %>
-    <h2 class="novo"><a href="/cadastro">Novo</a></h2>
+    <ul class="menu">        
+        <% for(let i=0; i < listaCategoria.length; i++) { %>
+            <li class="lista">
+                <a href="/<%= listaCategoria[i] %>"><h2 class="categorias"><%= listaCategoria[i] %></h2></a>
+            </li>
+        <% } %>
+        <li class="lista">
+            <h2 class="categorias" id="novo"><a href="/cadastro">Novo</a></h2>
+        </li>        
+    </ul>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 </nav>

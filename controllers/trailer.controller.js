@@ -58,7 +58,7 @@ async function validacao(trailerNew) {
   ) {
     message = "Preencha todos os campos!";
   } else if (ano.length != 4) {
-    message = `O Ano deve conter 4 digitos e ser anterior à ${anoAtual}`;
+    message = `O Ano deve conter 4 digitos e seranterior à ${anoAtual}`;
   } else if (+ano != parseInt(ano) || +duracao != parseInt(duracao)) {
     message = "Os campos (Ano) e (Duração) devem ser preenchidos com números.";
   } else if (
