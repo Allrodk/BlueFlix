@@ -1,12 +1,12 @@
 const Trailer = require("../models/listaTrailer");
 const { sequelize } = require("../models/listaTrailer");
 let message = "";
-let listaCategoria = [""];
+let listaCategoria = [];
 
-async function lista() {
-  await sequelize.sync();
-  const trailer = await Trailer.findAll();
-
+async function lista(trailer) {
+  // await sequelize.sync();
+  // const trailer = await Trailer.findAll();
+  listaCategoria = [];
   trailer.forEach((elemento) => {
     let chave = 0;
     for (let i = 0; i < listaCategoria.length; i++) {
@@ -19,14 +19,13 @@ async function lista() {
       listaCategoria.push(elemento.categoria);
     }
   });
-  listaCategoria.splice(0, 1);
 }
-lista();
 
 module.exports = {
   home: async (req, res) => {
     await sequelize.sync();
     const trailer = await Trailer.findAll();
+    await lista(trailer);
     res.render("../views/index", {
       catalogo: trailer,
       message,
@@ -67,14 +66,14 @@ module.exports = {
       setTimeout(() => {
         message = "";
       }, 5000);
-      res.render("../views/cadastro", { message });
+      res.render("../views/cadastro", { message, listaCategoria });
     } else if (+ano != parseInt(ano) || +duracao != parseInt(duracao)) {
       message =
         "Os campos (Ano) e (Duração) devem ser preenchidos com números.";
       setTimeout(() => {
         message = "";
       }, 5000);
-      res.render("../views/cadastro", { message });
+      res.render("../views/cadastro", { message, listaCategoria });
     } else if (
       (imagembg.search("http://") == -1) &
         (imagembg.search("https://") == -1) ||
@@ -85,7 +84,7 @@ module.exports = {
       setTimeout(() => {
         message = "";
       }, 5000);
-      res.render("../views/cadastro", { message });
+      res.render("../views/cadastro", { message, listaCategoria });
     } else {
       message = `✔ ${titulo} adicionado ao Catálogo.`;
       setTimeout(() => {
@@ -168,7 +167,7 @@ module.exports = {
       setTimeout(() => {
         message = "";
       }, 5000);
-      res.render("../views/detalhes", { message });
+      res.render("../views/detalhes", { message, listaCategoria });
     } else {
       message = `✔ ${trailer.titulo} deletado com Sucesso.`;
       setTimeout(() => {

@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilo.css">
-    <link rel="stylesheet" href="../css/estiloCadastro.css">
-    <link rel="stylesheet" href="../css/estiloNav.css">
+    <link rel="stylesheet" href="../css/estiloCadastro.css">    
     <link rel="stylesheet" href="../css/estiloMensagem.css">
     <title>Editar</title>
 </head>
@@ -69,7 +68,7 @@
                 </section>
                 <section>
                     <input type="hidden" name="id" value="<%=trailer.id%>">
-                    <button type="submit">Alterar</button>
+                    <button type="submit" onclick="validaEditar()">Alterar</button>
                 </section>
             </form>
         </section>
@@ -84,9 +83,10 @@
     <footer>
         <%- include('footer') %>
     </footer>
-    <script src="/js/script.js"></script>
+    <script src="/js/scriptEditar.js"></script>
     <script src="/js/scriptImagem.js"></script>
     <script src="/js/scriptMensagem.js"></script>    
+    <script src="/js/scriptValidacao.js"></script>   
 </body>
 
 </html>
