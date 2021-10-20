@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilo.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../css/estiloDetalhes.css">
+=======
+    <link rel="stylesheet" href="../css/estiloDetalhes.css">    
+    <link rel="stylesheet" href="../css/estiloMensagem.css">
+>>>>>>> d1033f2ad849e28d5afc58bf4552a9903860553f
     <title>Detalhes</title>
 </head>
 
@@ -50,11 +55,23 @@
 
         </section>
     </main>
+
+    <% if (message != "") {  %>
+        <section id="message">
+            <p><%= message %></p> <span id="close">&times;</span>
+        </section>
+    <% }  %>
+
     <footer>
         <%- include('footer') %>
+<<<<<<< HEAD
     </footer>
+=======
+    </footer>    
+>>>>>>> d1033f2ad849e28d5afc58bf4552a9903860553f
     <script src="/js/scriptVideo.js"></script>
     <script src="/js/scriptImagem.js"></script>
+    <script src="/js/scriptMensagem.js"></script>
 </body>
 
 </html>

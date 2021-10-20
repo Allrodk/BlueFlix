@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/estilo.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="./css/estiloCadastro.css">
+=======
+    <link rel="stylesheet" href="./css/estiloCadastro.css">    
+    <link rel="stylesheet" href="./css/estiloMensagem.css">
+>>>>>>> d1033f2ad849e28d5afc58bf4552a9903860553f
     <title>Cadastro</title>
 </head>
 <body>
@@ -30,11 +35,11 @@
                 <section class="anoDuracao">
                     <section class="itemcadastro">
                         <label for="ano">Ano: </label>
-                        <input type="text" name="ano" id="ano" required>
+                        <input type="number" name="ano" id="ano" required>
                     </section>
                     <section class="itemcadastro">
                         <label for="duracao">Duração: </label>
-                        <input type="text" name="duracao" id="duracao" placeholder="Em minutos" required>
+                        <input type="number" name="duracao" id="duracao" placeholder="Em minutos" required>
                     </section>
                     <section class="itemcadastro">
                         <label for="categoria">Categoria: </label>
@@ -67,11 +72,19 @@
                 </section>
             </form>
         </section>
-    </main>    
+    </main>   
+    
+    <% if (message != "") {  %>
+        <section id="message">
+            <p><%= message %></p> <span id="close">&times;</span>
+        </section>
+    <% }  %>
+
     <footer>
         <%- include('footer') %>
     </footer>
     <script src="/js/scriptCadastro.js"></script>
     <script src="/js/scriptImagem.js"></script>
+    <script src="/js/scriptMensagem.js"></script>
 </body>
 </html>

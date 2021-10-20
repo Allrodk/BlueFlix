@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilo.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../css/estiloCadastro.css">
+=======
+    <link rel="stylesheet" href="../css/estiloCadastro.css">    
+    <link rel="stylesheet" href="../css/estiloMensagem.css">
+>>>>>>> d1033f2ad849e28d5afc58bf4552a9903860553f
     <title>Editar</title>
 </head>
 
@@ -19,7 +24,7 @@
             <input type="hidden" id="imagemAtual" value="<%= trailer.imagembg %>">                            
         </div>
         <section class="formulario">
-            <form method="POST">
+            <form method="POST" id="formEditar">
                 <section class="itemcadastro">
                     <label for="titulo">Título: </label>
                     <input type="text" name="titulo" id="titulo" value="<%= trailer.titulo %>">
@@ -31,11 +36,11 @@
                 <section class="anoDuracao">
                     <section class="itemcadastro">
                         <label for="ano">Ano: </label>
-                        <input type="text" name="ano" id="ano" value="<%= trailer.ano %>">
+                        <input type="number" name="ano" id="ano" value="<%= trailer.ano %>">
                     </section>
                     <section class="itemcadastro">
                         <label for="duracao">Duração: </label>
-                        <input type="text" name="duracao" id="duracao" value="<%= trailer.duracao %>">
+                        <input type="number" name="duracao" id="duracao" value="<%= trailer.duracao %>">
                     </section>
                     <section class="itemcadastro">
                         <label for="categoria">Categoria: </label>
@@ -67,16 +72,25 @@
                 </section>
                 <section>
                     <input type="hidden" name="id" value="<%=trailer.id%>">
-                    <button type="submit">Alterar</button>
+                    <button type="submit" onclick="validaEditar()">Alterar</button>
                 </section>
             </form>
         </section>
     </main>
+
+    <% if (message != "") {  %>
+        <section id="message">
+            <p><%= message %></p> <span id="close">&times;</span>
+        </section>
+    <% }  %>
+
     <footer>
         <%- include('footer') %>
     </footer>
     <script src="/js/scriptEditar.js"></script>
     <script src="/js/scriptImagem.js"></script>
+    <script src="/js/scriptMensagem.js"></script>    
+    <script src="/js/scriptValidacao.js"></script>   
 </body>
 
 </html>
