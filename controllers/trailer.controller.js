@@ -20,7 +20,6 @@ async function lista() {
     }
   });
   listaCategoria.splice(0, 1);
-  console.log(listaCategoria);
 }
 lista();
 
@@ -32,7 +31,7 @@ module.exports = {
   },
 
   cadastro: async (req, res) => {
-    res.render("../views/cadastro");
+    res.render("../views/cadastro", { listaCategoria });
   },
 
   novo: async (req, res) => {
@@ -69,11 +68,11 @@ module.exports = {
 
   detalhes: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
-    res.render("../views/detalhes", { trailer: trailer });
+    res.render("../views/detalhes", { trailer: trailer, listaCategoria });
   },
   getEditar: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
-    res.render("../views/editar", { trailer: trailer });
+    res.render("../views/editar", { trailer: trailer, listaCategoria });
   },
 
   postEditar: async (req, res) => {
