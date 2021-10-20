@@ -169,53 +169,35 @@ module.exports = {
 
   postEditar: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
-    const {
-      titulo,
-      sinopse,
-      ano,
-      duracao,
-      classificacao,
-      categoria,
-      atores,
-      imagembg,
-      thumb,
-      video,
-    } = req.body;
+    
+    trailerNew = req.body;
+    await validacao(trailerNew);
 
-    if (
-      titulo == "" ||
-      ano == "" ||
-      duracao == "" ||
-      classificacao == "" ||
-      categoria == "" ||
-      atores == "" ||
-      imagembg == "" ||
-      thumb == "" ||
-      video == ""
-    ) {
-      message = "Preencha todos os campos!";
+    if (message != "") {
       setTimeout(() => {
         message = "";
       }, 5000);
+
       res.render("../views/editar", {
-        trailer: trailer,
+        trailer: trailerNew,
         message,
         listaCategoria,
       });
     } else {
-      trailer.titulo = titulo;
-      trailer.sinopse = sinopse;
-      trailer.ano = ano;
-      trailer.duracao = duracao;
-      trailer.classificacao = classificacao;
-      trailer.categoria = categoria;
-      trailer.atores = atores;
-      trailer.imagembg = imagembg;
-      trailer.thumb = thumb;
-      trailer.video = video;
+
+      trailer.titulo = trailerNew.titulo;
+      trailer.sinopse = trailerNew.sinopse;
+      trailer.ano = trailerNew.ano;
+      trailer.duracao = trailerNew.duracao;
+      trailer.classificacao = trailerNew.classificacao;
+      trailer.categoria = trailerNew.categoria;
+      trailer.atores = trailerNew.atores;
+      trailer.imagembg = trailerNew.imagembg;
+      trailer.thumb = trailerNew.thumb;
+      trailer.video = trailerNew.video;
 
       await trailer.save();
-      message = `✔ ${titulo} Modificado com Sucesso.`;
+      message = `✔ ${trailerNew.titulo} Modificado com Sucesso.`;
       setTimeout(() => {
         message = "";
       }, 5000);
