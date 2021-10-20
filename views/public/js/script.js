@@ -11,4 +11,3 @@ options.forEach((elemento, chave) => {
     lista.options[lista.options.length] = new Option(elemento, elemento, false, true);
   }
 });
-

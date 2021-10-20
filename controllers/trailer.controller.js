@@ -1,18 +1,41 @@
 const Trailer = require("../models/listaTrailer");
 const { sequelize } = require("../models/listaTrailer");
-vazio = ["Teste"];
-const cheio = vazio;
-console.log(cheio);
+let message = "";
+let listaCategoria = [""];
+
+async function lista() {
+  await sequelize.sync();
+  const trailer = await Trailer.findAll();
+
+  trailer.forEach((elemento) => {
+    let chave = 0;
+    for (let i = 0; i < listaCategoria.length; i++) {
+      if (listaCategoria[i] == elemento.categoria) {
+        chave = 1;
+        break;
+      }
+    }
+    if (chave == 0) {
+      listaCategoria.push(elemento.categoria);
+    }
+  });
+  listaCategoria.splice(0, 1);
+}
+lista();
 
 module.exports = {
   home: async (req, res) => {
     await sequelize.sync();
     const trailer = await Trailer.findAll();
-    res.render("../views/index", { catalogo: trailer, message });
+    res.render("../views/index", {
+      catalogo: trailer,
+      message,
+      listaCategoria,
+    });
   },
 
   cadastro: async (req, res) => {
-    res.render("../views/cadastro", { message });
+    res.render("../views/cadastro", { listaCategoria, message });
   },
 
   novo: async (req, res) => {
@@ -88,12 +111,20 @@ module.exports = {
 
   detalhes: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
-    res.render("../views/detalhes", { trailer: trailer, message });
+    res.render("../views/detalhes", {
+      trailer: trailer,
+      listaCategoria,
+      message,
+    });
   },
 
   getEditar: async (req, res) => {
     const trailer = await Trailer.findByPk(req.params.id);
-    res.render("../views/editar", { trailer: trailer, message });
+    res.render("../views/editar", {
+      trailer: trailer,
+      listaCategoria,
+      message,
+    });
   },
 
   postEditar: async (req, res) => {

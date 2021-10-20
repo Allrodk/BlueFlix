@@ -13,11 +13,8 @@
 </head>
 <body>
     <header>
-        <nav class="nav">
-            <h2 class="home"><a href="/">BLUEFLIX</a></h2>
-            <h2 class="novo"><a href="/cadastro">Novo</a></h2>
-        </nav>
-    </header>    
+        <%- include('nav') %>
+    </header>  
     <main>
         <div class="imagembg">
             <input type="hidden" id="imagemAtual" value="../img/Blueflix.png">                            
@@ -81,7 +78,7 @@
     <% }  %>
 
     <footer>
-        <h6>Todos os direitos reservados</h6>
+        <%- include('footer') %>
     </footer>
     <script src="/js/scriptCadastro.js"></script>
     <script src="/js/scriptImagem.js"></script>

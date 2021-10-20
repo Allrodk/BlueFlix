@@ -14,10 +14,7 @@
 
 <body>
     <header>
-        <nav class="nav">
-            <h2 class="home"><a href="/">BLUEFLIX</a></h2>
-            <h2 class="novo"><a href="/cadastro">Novo</a></h2>
-        </nav>
+        <%- include('nav') %>
     </header>
     <main>
         <div class="imagembg" id="editarImagem">
@@ -85,7 +82,7 @@
     <% }  %>
 
     <footer>
-        <h6>Todos os direitos reservados</h6>
+        <%- include('footer') %>
     </footer>
     <script src="/js/script.js"></script>
     <script src="/js/scriptImagem.js"></script>
