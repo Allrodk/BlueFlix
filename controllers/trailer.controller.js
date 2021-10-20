@@ -19,6 +19,43 @@ async function lista(trailer) {
   });
 }
 
+async function validacao(trailerNew) {
+  const {
+    titulo,
+    sinopse,
+    ano,
+    duracao,
+    classificacao,
+    categoria,
+    atores,
+    imagembg,
+    thumb,
+    video,
+  } = trailerNew;
+  if (
+    titulo == "" ||
+    ano == "" ||
+    duracao == "" ||
+    classificacao == "" ||
+    categoria == "" ||
+    atores == "" ||
+    imagembg == "" ||
+    thumb == "" ||
+    video == ""
+  ) {
+    message = "Preencha todos os campos!";
+  } else if (+ano != parseInt(ano) || +duracao != parseInt(duracao)) {
+    message = "Os campos (Ano) e (Duração) devem ser preenchidos com números.";
+  } else if (
+    (imagembg.search("http://") == -1) & (imagembg.search("https://") == -1) ||
+    (thumb.search("http://") == -1) & (thumb.search("https://") == -1)
+  ) {
+    message =
+      "Os campos (Imagem de fundo) e (Miniatura) devem conter urls válidas.";
+  }
+  return message;
+}
+
 module.exports = {
   home: async (req, res) => {
     await sequelize.sync();
@@ -44,74 +81,56 @@ module.exports = {
   },
 
   cadastro: async (req, res) => {
-    res.render("../views/cadastro", { listaCategoria, message });
+    trailerNew = {
+      titulo: "",
+      sinopse: "",
+      ano: "",
+      duracao: "",
+      classificacao: "",
+      categoria: "",
+      atores: "",
+      imagembg: "",
+      thumb: "",
+      video: "",
+    };
+    res.render("../views/cadastro", {
+      trailerNew: trailerNew,
+      listaCategoria,
+      message,
+    });
   },
 
   novo: async (req, res) => {
-    const {
-      titulo,
-      sinopse,
-      ano,
-      duracao,
-      classificacao,
-      categoria,
-      atores,
-      imagembg,
-      thumb,
-      video,
-    } = req.body;
+    trailerNew = req.body;
+    await validacao(trailerNew);
 
-    if (
-      titulo == "" ||
-      ano == "" ||
-      duracao == "" ||
-      classificacao == "" ||
-      categoria == "" ||
-      atores == "" ||
-      imagembg == "" ||
-      thumb == "" ||
-      video == ""
-    ) {
-      message = "Preencha todos os campos!";
+    if (message != "") {
       setTimeout(() => {
         message = "";
       }, 5000);
-      res.render("../views/cadastro", { message, listaCategoria });
-    } else if (+ano != parseInt(ano) || +duracao != parseInt(duracao)) {
-      message =
-        "Os campos (Ano) e (Duração) devem ser preenchidos com números.";
-      setTimeout(() => {
-        message = "";
-      }, 5000);
-      res.render("../views/cadastro", { message, listaCategoria });
-    } else if (
-      (imagembg.search("http://") == -1) &
-        (imagembg.search("https://") == -1) ||
-      (thumb.search("http://") == -1) & (thumb.search("https://") == -1)
-    ) {
-      message =
-        "Os campos (Imagem de fundo) e (Miniatura) devem conter urls válidas.";
-      setTimeout(() => {
-        message = "";
-      }, 5000);
-      res.render("../views/cadastro", { message, listaCategoria });
+
+      res.render("../views/cadastro", {
+        trailerNew: trailerNew,
+        message,
+        listaCategoria,
+      });
     } else {
-      message = `✔ ${titulo} adicionado ao Catálogo.`;
+      message = `✔ ${trailerNew.titulo} adicionado ao Catálogo.`;
       setTimeout(() => {
         message = "";
       }, 5000);
 
       await Trailer.create({
-        titulo: titulo,
-        sinopse: sinopse,
-        ano: ano,
-        duracao: duracao,
-        classificacao: classificacao,
-        categoria: categoria,
-        atores: atores,
-        imagembg: imagembg,
-        thumb: thumb,
-        video: video,
+        titulo: trailerNew.titulo,
+        sinopse: trailerNew.sinopse,
+        ano: trailerNew.ano,
+        duracao: trailerNew.duracao,
+        classificacao: trailerNew.classificacao,
+        categoria: trailerNew.categoria,
+        atores: trailerNew.atores,
+        imagembg: trailerNew.imagembg,
+        thumb: trailerNew.thumb,
+        video: trailerNew.video,
       });
 
       res.redirect("/");
@@ -151,23 +170,45 @@ module.exports = {
       video,
     } = req.body;
 
-    trailer.titulo = titulo;
-    trailer.sinopse = sinopse;
-    trailer.ano = ano;
-    trailer.duracao = duracao;
-    trailer.classificacao = classificacao;
-    trailer.categoria = categoria;
-    trailer.atores = atores;
-    trailer.imagembg = imagembg;
-    trailer.thumb = thumb;
-    trailer.video = video;
+    if (
+      titulo == "" ||
+      ano == "" ||
+      duracao == "" ||
+      classificacao == "" ||
+      categoria == "" ||
+      atores == "" ||
+      imagembg == "" ||
+      thumb == "" ||
+      video == ""
+    ) {
+      message = "Preencha todos os campos!";
+      setTimeout(() => {
+        message = "";
+      }, 5000);
+      res.render("../views/editar", {
+        trailer: trailer,
+        message,
+        listaCategoria,
+      });
+    } else {
+      trailer.titulo = titulo;
+      trailer.sinopse = sinopse;
+      trailer.ano = ano;
+      trailer.duracao = duracao;
+      trailer.classificacao = classificacao;
+      trailer.categoria = categoria;
+      trailer.atores = atores;
+      trailer.imagembg = imagembg;
+      trailer.thumb = thumb;
+      trailer.video = video;
 
-    await trailer.save();
-    message = `✔ ${titulo} Modificado com Sucesso.`;
-    setTimeout(() => {
-      message = "";
-    }, 5000);
-    res.redirect("/");
+      await trailer.save();
+      message = `✔ ${titulo} Modificado com Sucesso.`;
+      setTimeout(() => {
+        message = "";
+      }, 5000);
+      res.redirect("/");
+    }
   },
 
   deletar: async (req, res) => {

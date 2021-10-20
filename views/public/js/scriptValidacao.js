@@ -15,13 +15,11 @@ function validaEditar() {
   listaEditar.forEach((item) => {
     valor = document.getElementById(item);
     if ((valor.value == "") & (vazio == "")) {
-      vazio = item;
-      alert(valor.value);
+      vazio = item;      
     }
   });
   if (vazio != "") {
     alert(vazio);
-    document.getElementById(vazio).focus();
-    return false;
+    document.getElementById(vazio).focus();    
   }
 }
