@@ -27,9 +27,21 @@ module.exports = {
     const trailer = await Trailer.findAll();
     await lista(trailer);
     res.render("../views/index", {
-      catalogo: trailer,
+      trailer: trailer,
       message,
       listaCategoria,
+    });
+  },
+
+  categorias: async (req, res) => {
+    const trailer = await Trailer.findAll({
+      where: { categoria: req.params.id },
+    });
+
+    res.render("../views/index", {
+      trailer: trailer,
+      listaCategoria,
+      message,
     });
   },
 

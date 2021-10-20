@@ -12,4 +12,6 @@ router.get("/editar/:id", controller.getEditar);
 router.post("/editar/:id", controller.postEditar);
 router.get("/deletarTrailer/:id", controller.deletar);
 
+router.get("/:id", controller.categorias);
+
 module.exports = router;

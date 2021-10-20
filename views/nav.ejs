@@ -1,5 +1,8 @@
 <nav class="nav">
     <h2 class="home"><a href="/">BLUEFLIX</a></h2>
-    <h2 class="categorias"><%= listaCategoria %></h2>
+    
+    <% for(let i=0; i < listaCategoria.length; i++) { %>
+        <a href="/<%= listaCategoria[i] %>"><h2 class="categorias"><%= listaCategoria[i] %></h2></a>
+    <% } %>
     <h2 class="novo"><a href="/cadastro">Novo</a></h2>
 </nav>
