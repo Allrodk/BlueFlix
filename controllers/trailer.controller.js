@@ -1,12 +1,10 @@
 const Trailer = require("../models/listaTrailer");
 const { sequelize } = require("../models/listaTrailer");
 let message = "";
-let listaCategoria = [""];
+let listaCategoria = [];
 
-async function lista() {
-  await sequelize.sync();
-  const trailer = await Trailer.findAll();
-
+async function lista(trailer) {
+  listaCategoria = [];
   trailer.forEach((elemento) => {
     let chave = 0;
     for (let i = 0; i < listaCategoria.length; i++) {
@@ -19,14 +17,13 @@ async function lista() {
       listaCategoria.push(elemento.categoria);
     }
   });
-  listaCategoria.splice(0, 1);
 }
-lista();
 
 module.exports = {
   home: async (req, res) => {
     await sequelize.sync();
     const trailer = await Trailer.findAll();
+    await lista(trailer);
     res.render("../views/index", { catalogo: trailer, message, listaCategoria });
   },
 
